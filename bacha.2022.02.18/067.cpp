@@ -27,12 +27,14 @@ ll d9(ll n) { // (10) -> (9)
     }
     return res;
 }
+
 int main() {
     long long n, k;
     cin >> n >> k;
 
     rep (i, k) {
         n = d9(d8(n));
+
     }
     cout << n << endl;
     return 0;

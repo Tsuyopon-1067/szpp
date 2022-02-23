@@ -12,11 +12,7 @@ int main() {
 
     int m;
     cin >> m;
-    vector<vector<int>> x(m, vector<int>(2));
-    rep (i, m) rep (j, m) cin >> x[i][j];
-
-    vector<vector<int>> dp(n+1, vector<int>(n+1));
-    rep (i, n) dp[0][i] = 0;
+    vector<int> p(n);
 
     return 0;
 }
