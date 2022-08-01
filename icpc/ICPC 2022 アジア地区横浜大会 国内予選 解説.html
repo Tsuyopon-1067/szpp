@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>ICPC 2022 アジア地区横浜大会 国内予選 解説</title>
+<style type="text/css">
+body{
+  font-family : sans-serif;
+}
+
+table.main {
+  border-color : #66f;
+  border-style : solid;
+  border-width : 1pt 1pt 1pt 1pt;
+}
+
+td.main {
+  background-color : #fff;
+}
+
+td.menu {
+  background-color : #fff;
+}
+
+h1 {
+  border-color : #78c;
+  border-style : solid;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 5px 0px 0px 0px;
+}
+
+h2 {
+  color            : #fff;
+  font-size        : medium;
+  background-color : #33f;
+
+  border-color : #33f;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 5px 0px 0px 0px;
+  padding      : 5px 5px;
+}
+
+h2.result_congrat {
+  color            : #fff;
+  font-size        : medium;
+  background-color : #0f8;
+
+  border-color : #0f8;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 5px;
+}
+
+div.result_congrat {
+  border-color : #0f8;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 10px;
+}
+
+h2.result_one_more {
+  color            : #fff;
+  font-size        : medium;
+  background-color : #88f;
+
+  border-color : #88f;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 5px;
+}
+
+div.result_one_more {
+  border-color : #88f;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 10px;
+}
+
+h2.result_wrong {
+  color            : #fff;
+  font-size        : medium;
+  background-color : orange;
+
+  border-color : orange;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 5px;
+}
+
+div.result_wrong {
+  border-color : orange;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 10px;
+}
+
+h2.result_missing {
+  color            : #fff;
+  font-size        : medium;
+  background-color : #444;
+
+  border-color : #444;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 5px;
+}
+
+div.result_missing {
+  border-color : #444;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 10px;
+}
+
+h2.result_hopeless {
+  color            : #fff;
+  font-size        : medium;
+  background-color : red;
+
+  border-color : red;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 5px;
+}
+
+div.result_hopeless {
+  border-color : red;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 10px;
+}
+
+h3 {
+  color            : #fff;
+  font-size        : medium;
+  background-color : #78c;
+
+  border-color : #78c;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 0px 10px;
+}
+
+div {
+  border-color : #78c;
+  border-style : double;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 10px;
+}
+
+div.banner {
+  border-color : #78c;
+  border-style : none;
+  border-width : 1px 1px 1px 1px;
+
+  margin       : 0px 0px 0px 0px;
+  padding      : 5px 10px;
+}
+
+p.result {
+  color : #f00;
+}
+
+ul.menu {
+  list-style-type:none;
+  margin       : 2pt;
+  padding      : 2pt;  
+}
+
+h3 a {
+	color: white;
+}
+
+pre, tt {
+  font-family: Courier, monospace;
+}
+</style>
+</head>
+<body class="vsc-initialized">
+<h3 id="A"><a href="#A"><u>A: 感染ピークの回数</u></a></h3>
+<p>
+提案： 鵜川 始陽<br>
+主担当： 山口 文彦
+</p>
+
+<p>
+題意通りの条件を満たすデータの個数を数える問題である．
+</p>
+<p>
+まずは，データセットを整数の配列などに読み込んでおくのが素直な解法であろう．
+問題文の通りに <var>v</var><sub>1</sub> から <var>v</var><sub><var>n</var></sub> が与えられているとき，
+最初と最後はピークにならないので，
+<var>v</var><sub><var>i</var>-1</sub> &lt; <var>v</var><sub><var>i</var></sub> かつ 
+<var>v</var><sub><var>i</var></sub> &gt; <var>v</var><sub><var>i</var>+1</sub> であることを，
+<var>i</var> が 2 以上 <var>n</var>-1 以下の範囲で検査する．
+ピーク数を数えるための変数を用意して 0 に初期化しておき，
+条件を満たす場合に 1 ずつ加算していけばよい．
+</p>
+<p>
+<var>n</var> は最大でも 1000 であるから，高々 998 回の検査をすればよく，
+計算時間はごく短く済む．
+</p>
+
+<h3 id="B"><a href="#B"><u>B: 誰ひとり取り残さない</u></a></h3>
+<p>
+提案： 柴山 悦哉<br>
+主担当： 柴山 悦哉
+</p>
+<p>
+  この問題は，ババ抜きに似たカードゲームのシミュレーションを行うものである．与えられたゲームのルールに忠実にしたがったプログラムを作れば良い．
+</p>
+<p>
+  このシミュレーションを行うためには，環状に並んだプレイヤーの手札を保持するデータ構造が必要になるが，配列，連結リスト，双方向連結リスト等のどれを用いても良い．シミュレーションの過程は，次にカードを引かれるプレイヤー (<i>p</i>) の選択，そのときにカードを引くプレイヤー (<i>p′</i>) の選択，<i>p</i> の手札の中で番号が最小のカードの <i>p′</i> の手札への移動，同じ番号のカードが揃ったときの手札からの削除，終了判定を組み合わせたものであり，それぞれは単純な記述で実現可能である．
+</p>
+<p>
+  プレイヤーの人数は高々 1000 人で，カードを引く回数はプレイヤーの人数の高々 2 乗のオーダーになる．したがって，高速なアルゴリムを工夫する必要はない．
+</p>
+
+<h3 id="C"><a href="#C"><u>C: ICPC に向けての練習日程</u></a></h3>
+<p>
+提案： 森田 晃平<br>
+主担当： 森田 晃平
+</p>
+<p>
+  <var>n</var> 日の練習日はなるべく大きくまとめた方が能力は高まり，<var>m</var> 日の休息日はなるべく平均的に分散した方があまり能力を低めずに済む．
+</p>
+<p>
+  休息日の連続を <var>k</var> 回に分散すると決めたら，初日と最終日を休息にして、練習日は 1 日ずつの <var>k</var>−2 回と，残り全部をまとめた連続を 1 回とするのが最適である．休息日は ⌊<var>m</var>/<var>k</var>⌋ 日の連続と ⌊<var>m</var>/<var>k</var>⌋+1 日の連続を組み合わせるのが最適になる．この方針で，最も能力を高められる <var>k</var> を見つければ良い．
+</p>
+
+<h3 id="D"><a href="#D"><u>D: 入場待ちの行列</u></a></h3>
+<p>
+提案： 稲葉 一浩<br>
+主担当： 稲葉 一浩
+</p>
+<p>
+仮に分割後の各列がソート済みであれば，この問題に示された最後のステップの操作は，マージソートにおけるマージ操作のようなものになっている．この問題
+ではソート済みでないような列も考える必要があるが，そのような場合にも成り立つような性質を考察することで，効率的な解法を得ることができる．
+</p>
+<p>
+特に重要なのが，マージされる各々の列は，必ずマージ後の列の部分列になっているという性質である．
+この性質を満たすためには， 聴衆の最初の並び順と最終的な入場順が逆転しているような箇所では，必ず列を分割しなければならない．
+</p>
+<p>
+そのような必須の箇所で分割した後，さらに細かく分割することが可能な場合もあるが，その場合はマージによって順番が変わらないようにする必要がある．そうでないと部分列であるという性質が壊れてしまう．
+順番を変えないためには，チケットの番号が，前にいる全ての人のチケット番号よりも大きいような人のところで列を区切るとよい．そのような箇所では列を区切っても区切らなくてもよい．
+</p>
+<p>
+以上から，<b>切らなければいけない箇所</b>と，<b>切っても切らなくてもいい箇所</b>の数を数えることができる．
+それらの候補から最大 k-1 箇所を選ぶ場合の数を求めれば，欲しい答えが得られる．
+そもそもどのように区切っても目標の列を作れない場合は 0 を返すことには注意する必要がある．
+</p>
+
+<h3 id="E"><a href="#E"><u>E: 伝承の村</u></a></h3>
+<p>
+  提案： 隈部 壮<br>
+  主担当： 隈部 壮
+</p>
+<p>
+  グリッド上に <t>+</t> か <t>−</t> の記号を配置し，各行各列が与えられた条件を満たすようにできるかを判定する問題である．
+  <t>+</t> を開き括弧，<t>−</t> を閉じ括弧とみなしたときに，各行各列に対する条件は，その行あるいは列の文字を順に読んでできる文字列が「バランスの取れた括弧列になっている」あるいは「なっていない」のどちらかである．
+</p>
+<p>
+  グリッドの <i>i</i> 行目をバランスの取れた括弧列にするためには，左端の文字を <t>+</t> に，右端の文字を <t>−</t> にしなければならない．
+  同様に，グリッドの <i>j</i> 列目をバランスの取れた括弧列にするためには，上端の文字を <t>+</t> に，下端の文字を <t>−</t> にしなければならない．
+  これらの条件を満たすように文字を配置したとき，もし上下左右の端にある行および列に関する条件を満たすことができなくなれば，条件をすべて満たす配置は不可能である．
+  逆に，そうでなければ他の条件もすべて満たす配置が可能であることを，実際の配置を構成することによって証明することができる．
+</p>
+
+<h3 id="F"><a href="#F"><u>F: じわじわ削れ</u></a></h3>
+<p>
+  提案： 楠本 充<br>
+  主担当： 山口 勇太郎
+</p>
+<p>
+式の長さを <i>m</i> とする．
+構文解析をし，構文木上の適切な動的計画法を設計することで，たとえば O(<i>m</i><sup>2</sup> log <i>m</i>) 時間でこの問題を解くことができる．
+以下ではその一例を述べる．
+</p>
+
+<p>
+まず，構文木として，各ノードが以下のいずれかであるような，root を根とする二分木を作る．
+これは O(<i>m</i>) 時間で可能であり，ノードの数は高々 2<i>m</i> 個である．
+</p>
+
+<ul>
+<li><b>葉:</b> 英小文字 1 文字を持つ．</li>
+<li><b>結合:</b> 左右の子ノードが持つ文字列を（左右の順に）結合して得られる文字列を持つ．</li>
+<li><b>削減:</b> 唯一の子ノードと同じ文字列を持つ．（ <big><code>?(</code></big>...<big><code>)</code></big> に対応する．）</li>
+</ul>
+
+<p>
+構文木の各ノード <i>v</i> で，以下の文字列 dp[<i>v</i>][<i>l</i>][<i>r</i>] を計算すると，dp[root][0][0] が求める答えである．
+</p>
+
+<blockquote>
+dp[<i>v</i>][<i>l</i>][<i>r</i>] =（ノード <i>v</i> が持つ文字列について，自身を含まない祖先において左側 <i>l</i> 文字と右側 <i>r</i> 文字が削られるとき，自身以下の <big><code>?</code></big> を処理した結果として得られる文字列のうち辞書順で最初に現れるもの）
+</blockquote>
+
+<p>
+これは素朴なメモ化再帰で top-down に計算できる．
+たとえば，問題文中の例 <big><code>?(?(icp)c)</code></big> であれば，root とその唯一の子 <i>v</i> は文字列 <big><code>icpc</code></big> を持ち，dp[root][0][0] = min{dp[<i>v</i>][1][0], dp[<i>v</i>][0][1]} を計算できればよい．
+<i>v</i> は結合ノードであり，左右の子をそれぞれ <i>u, w</i> とすると，それぞれが持つ文字列は <big><code>icp</code></big>, <big><code>c</code></big> であり，dp の値は計算できる．（ + は文字列の結合を，<i>ε</i> は空文字列を表す．） 
+</p>
+
+<blockquote>
+dp[<i>v</i>][1][0] = dp[<i>u</i>][1][0] + dp[<i>w</i>][0][0] = min{<big><code>p</code></big>, <big><code>c</code></big>} + <big><code>c</code></big> = <big><code>cc</code></big><br>
+dp[<i>v</i>][0][1] = dp[<i>u</i>][0][0] + dp[<i>w</i>][0][1] = min{<big><code>cp</code></big>, <big><code>ic</code></big>} + <i>ε</i> = <big><code>cp</code></big><br>
+</blockquote>
+
+<p>
+ただし，削る文字数よりノードが持つ文字数が少なくなる場合には，該当部分を空文字列として扱う，結合ノードであれば反対側のノードにはみ出して削るなど，多少の追加処理が必要となる．
+</p>
+
+<p>
+素朴にすべてを計算すると，ノードと左右の削れ具合のすべてのパターンについて dp[<i>v</i>][<i>l</i>][<i>r</i>] を計算することになり，文字列の辞書順比較を素朴に行うと全体で O(<i>m</i><sup>4</sup>) 時間となる．
+全体が空文字列にならないことから，実際に機能する <big><code>?</code></big> は高々 <i>m</i>/4 ≤ 250 個であり，この計算量でも最悪少し待てば終わる程度である．
+さらに，以下の工夫を施すことで冒頭に述べた程度の計算量に削減でき，十分高速に動作することが保証できる．
+</p>
+
+<ul>
+<li>dp[<i>v</i>][<i>l</i>][<i>r</i>] は dp[<i>v</i>][<i>l</i>][0] の右側 <i>r</i> 文字を削った文字列に等しい．
+したがって，実は <i>r</i> は DP に必要無く，必要に応じて dp[<i>v</i>][<i>l</i>][0] の右側を削ればよい．
+これにより <i>m</i> を 1 つ分落とすことができる．</li>
+<li>文字列の比較をハッシュと二分探索を用いて行うなどすれば，O(<i>m</i>) 時間を O(log <i>m</i>) 時間に改善できる．</li>
+</ul>
+
+<h3 id="G"><a href="#G"><u>G: 連絡を絶やすな</u></a></h3>
+<p>
+  提案： 城下 慎也<br>
+  主担当： 城下 慎也
+</p>
+<p>
+  まず，A, B 
+ともに線分上を移動する場合を考える．このとき，開始端を同時に出発し，終端に同時に到着するようそれぞれ一定の速度で移動することで，エージェント間の
+距離を max{開始端間の距離, 終端間の距離} 以下に抑えることができる．また，これより距離の最大値を縮めることはできない．
+</p>
+<p>
+  次に A がある線分から別の線分に乗り換える場合を考える．このとき，B は現在いる線分上で A に最も近い点（線分の一方の端点か，A がいる頂点から線分に引いた垂線の足）にいると仮定して良い．
+</p>
+<p>
+  <b>証明：</b>最適解において B が線分上で A がいる頂点に最も近い点 X とは異なる点 Y にいると仮定する．このとき，A 
+が線分を変える直前に B のみが Y から X に移動し，変えた直後に B のみが X から Y に移動する動作を追加しても，AX 間の距離が 
+AY 間の距離以下であることから最適解は変化しない．この処理を順に適用することで，点 A が線分を変える瞬間には，B 
+が線分上で最も近い点にいるように最適解を変更できる．
+</p>
+<p>
+  B 
+についても同様の議論ができる．さらに，乗り換えが発生してから次の乗り換えが発生するまでの間はどちらのエージェントも単一の線分上を移動するため，最
+適解は，「（A, B いずれも頂点または垂線の足にいる状態）の列であり，隣接する要素間は A, B 
+いずれも単一の線分上の移動で実現できるもの」に限定しても求めることができる．このとき，各列における最長距離は max{各要素における A, B 
+間の距離} となる．
+</p>
+<p>
+  A, B の位置 (頂点または垂線の足) のペアを頂点とし，A, B 
+ともに単一の線分の移動となるような頂点間を辺で結んだグラフを考える．各辺の重みを，対応する線分移動における距離の最大値としたとき，初期状態 
+(A, B ともに潜入経路の開始端にいる状態) から終了状態 (A, B ともに潜入経路の終端にいる状態) 
+まで移動するために用いる辺の重みの最大値として考えられる最小値を求める問題となる．これは，グラフの最小全域木における，初期状態と終了状態を結ぶパ
+ス上の辺の重みの最大値に等しい．
+</p>
+<p>
+  計算量について考える．A, B のいずれも折れ線の頂点上にいないケースは考慮しなくて良いため，それらを取り除くことでグラフの頂点数は <i>O</i>(<i>n</i><i>m</i>)，辺数は <i>O</i>(<i>n</i><sup>2</sup><i>m</i><sup>2</sup>) となる．全体の計算量は <i>O</i>(<i>n</i><sup>2</sup><i>m</i><sup>2</sup> log (<i>n</i><i>m</i>)) で抑えられる．
+</p>
+
+<h3 id="H"><a href="#H"><u>H: 芸術家の苦悩</u></a></h3>
+<p>
+  提案： 楠本 充，隈部 壮<br>
+  主担当： 佐藤 遼太郎
+</p>
+<p>
+  ボールを頂点，紐を無向辺と解釈すると，本問題は最終的に構築されたグラフの二部性の判定を要求している．更に二部グラフである場合は，各頂点を同色の頂点同士が隣接しないよう赤と青の 2 色で塗り分けるとき，赤く塗らねばならない最小の頂点数を問うている．
+</p>
+
+<p>
+  最終的な頂点数を <i>n</i> とすると，二部性の判定は要素数 2<i>n</i> の素集合データ構造 (Union-Find) を用いて行える．2 頂点 (<i>u</i>, <i>v</i>) の連結クエリに対しては Union-Find における各要素対 (<i>n</i> + <i>u</i>, <i>v</i>), (<i>u</i>, <i>n</i> + <i>v</i>) について各要素を含む集合を統合する．また複製クエリに対しては，複製前の頂点数を <i>m</i> として，要素 1, ..., <i>m</i>, <i>n + 1</i>, ..., <i>n</i> + <i>m</i> の統合の状態を要素 <i>m</i> + 1, ..., 2<i>m</i>, <i>n</i> + <i>m</i> + 1, ..., <i>n</i> + 2<i>m</i> にコピーする．最終的に <i>i</i> = 1, ..., <i>n</i> の全てについて Union-Find の 2 要素 <i>i</i>, <i>n</i> + <i>i</i> が同一の集合に含まれていないことが，グラフが二部性を満たす必要十分条件である．
+</p>
+
+<p>
+  ここで更に，Union-Find の各集合に塗り分けの情報を持たせることが可能である．具体的には，Union-Find の各要素 <i>i</i> に対する値 <i>f</i>(<i>i</i>) を，<i>i</i> ≤ <i>n</i> のときグラフの頂点 <i>i</i> を赤色に塗った場合，<i>i</i> &gt; <i>n</i> のとき頂点 <i>i − n</i> を青色に塗った場合のその連結成分全体の赤色の頂点数として定める．すると，Union-Find 上で同一の集合に含まれる全ての要素 <i>i</i> に対して <i>f</i>(<i>i</i>) は常に共通の値をとるので，<i>f</i>(<i>i</i>) の値は Union-Find の各集合の代表点に関してのみ管理すればよく，連結クエリに対しても高速に更新できる．
+</p>
+
+<p>
+  この情報を使用すると，グラフ全体で赤く塗る必要のある最小の頂点数の値も各クエリに対して随時更新できる．連結クエリ (<i>u</i>, <i>v</i>) に対しては <i>u</i>, <i>v</i> の属する連結成分に関する差分が計算でき，複製クエリに対しては現時点の値を単に 2 倍すればよい．
+</p>
+
+<p>
+  最後に，本問の解を求めるには要素数 2<i>n</i> の Union-Find 
+を持つ必要はなく，上述の更新操作に必要な要素のみを管理すれば十分である．具体的には，各連結クエリに現れる頂点について，その頂点自身に加えてそれら
+の複製元となる頂点たちの情報のみを管理すれば上記の解法で述べた処理は全て問題なく行える．したがって，データセット中のクエリ数を <i>m</i>，特に複製クエリ数を <i>k</i> とすると，要素数 <i>O</i>(<i>km</i>) の Union-Find で本問題が解ける．
+</p>
+
+
+</body></html>

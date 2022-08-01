@@ -1,0 +1,1288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja"><head>
+<link rel="STYLESHEET" href="All%20Problems_files/icpc.css" type="text/css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>All Problems</title>
+</head>
+
+<body class="vsc-initialized">
+
+<table class="main">
+<!-- ------------ 1st row ---------------- -->
+<!-- |        ACM Inter Collegiate Programming Contest       | -->
+<tbody><tr>
+ <td colspan="2" align="center">
+  
+<h1><img src="All%20Problems_files/icpc_logo.png" alt="acm International Collegiate Programming Contest"></h1>
+<div class="banner" align="right"><font size="-1">
+<i>2022/7/8 Yokohama</i></font></div> </td>
+</tr>
+
+<!-- ------------ 2nd row ---------------- -->
+<!-- menu in the 1st column. empty in the 2nd. -->
+<tr>
+ <td class="menu" rowspan="4" valign="top" nowrap="nowrap">
+  </td>
+ <td>
+  </td>
+</tr>
+
+<!-- ------------ 3rd row ---------------- -->
+<!-- no 1st column. empty in the 2nd. -->
+<tr>
+ <td>
+  </td>
+</tr>
+
+<!-- ------------ 4th row ------------ -->
+<!-- nothing in the 1st column. everything else in the 2nd -->
+<tr>
+ <td class="main">
+   <h2>Links</h2><div><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+<a name="section_A"><h2>Problem A</h2>
+<!-- begin ja only -->
+<h3 style="text-decoration: underline">感染ピークの回数</h3>
+<!-- end ja only -->
+
+<div>
+  <!-- begin ja only -->
+<p>
+新しい感染症 COVID-99 について，市内の PCR 検査で判明した日ごとの新規陽性者数が報告されている．
+あなたは市の広報部門からこれまでの新規陽性者数のピークの回数を数えるプログラムの作成を依頼されている．
+</p>
+<p>
+ここでピークの回数とは，前日と翌日のどちらよりも報告された新規陽性者数が多かった日の数である．
+</p>
+<p>
+市内でこの感染症が広がり始める前に PCR 検査を始めたので，最初の日の新規陽性者数はゼロである．
+報告の最終日はピークに数えない．
+なお，同数の日が連続することはない．
+</p>
+  <!-- end ja only -->
+
+<div style="text-align:center;" class="figure">
+  <img src="All%20Problems_files/A-1.png">
+</div>
+  <!-- begin ja only -->
+<div style="text-align:center;" class="figure">
+図 A-1: Sample Input の最後のデータセットの新規陽性者数．ピークを赤丸で示している．
+</div>
+  <!-- end ja only -->
+</div>
+
+<h3>Input</h3>
+
+<div>
+  <!-- begin ja only -->
+  <p>
+入力は複数のデータセットからなる．
+各データセットは次の形式で表される．
+  </p>
+  <!-- end ja only -->
+  <blockquote>
+    <var>n</var> <br>
+    <var>v</var><sub>1</sub> ... <var>v</var><sub><var>n</var></sub>
+  </blockquote>
+  <!-- begin ja only -->
+  <p>
+<var>n</var> は新規陽性者数の報告があった日数である (3 ≤ <var>n</var> ≤ 1000)．
+<var>v</var><sub><var>i</var></sub> は <var>i</var> 日目の新規陽性者数で，0 以上 1000 以下の整数である．
+なお上述のように，<var>v</var><sub>1</sub> は 0 であり，
+1 ≤ <var>i</var> &lt; <var>n</var> である  <var>i</var> に対して <var>v</var><sub><var>i</var></sub> ≠ <var>v</var><sub><var>i</var>+1</sub> である．
+  </p>
+  <p>
+入力の終わりは，ひとつのゼロからなる行で表される．
+入力に含まれるデータセットは 100 個以内である．
+  </p>
+  <!-- end ja only -->
+</div>
+
+<h3>Output</h3>
+
+<div>
+  <!-- begin ja only -->
+  <p>
+各データセットに対して，ピークの回数を 1 行に出力せよ．
+  </p>
+  <!-- end ja only -->
+</div>
+
+<h3>Sample Input</h3>
+
+<div>
+<pre>3
+0 1000 0
+5
+0 1 2 0 1
+3
+0 1 2
+7
+0 1 0 1 8 7 6
+11
+0 4 3 7 6 10 7 8 4 6 10
+0
+</pre>
+</div>
+
+<h3>Output for the Sample Input</h3>
+
+<div>
+<pre>1
+1
+0
+2
+4
+</pre>
+</div>
+</a><div align="right"><a name="section_A">(End of Problem A) </a><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+<a name="section_B"><h2>Problem B</h2>
+<!-- begin ja only -->
+<h3><u>誰ひとり取り残さない</u></h3>
+<!-- end ja only -->
+
+<div>
+  <!-- please enclose each h3 level section with div -->
+
+  <!-- begin ja only -->
+  <p>
+    <i>n</i> 人のプレイヤー <i>P</i><sub>1</sub>, ..., <i>P<sub>n</sub></i> がこの順番で時計回りに座って，ババ抜きに似たカードゲームを行う．
+  </p>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    このゲームでは，1 から <i>n</i> までの各番号が書かれたカードを 2 枚ずつ使う．最初に各プレイヤーはカードを 2 枚持っている．
+  </p>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    まず，同じ番号のカードを 2 枚持っているプレイヤーは，それらのカードを場に捨てる．もし万一全員がカードを捨ててしまったら，ここでゲームは終了する．そうでなければ，ゲームが終了するまで，以下の動作を繰り返し行う．これ以降，プレイヤー <i>p</i> に対して，「次のプレイヤー」は，その時点でまだ手札が 1 枚以上残っているプレイヤーのうち，時計回りの方向で <i>p</i> から一番近い者を意味する．
+  </p>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <ul>
+    <li>次のようにプレイヤー <i>p</i> を選ぶ，
+      <ul>
+        <li>1 回目は <i>P</i><sub>1</sub> を選ぶ．ただし，<i>P</i><sub>1</sub> の手札が残っていなければ，<i>P</i><sub>1</sub> の次のプレイヤーを選ぶ．</li>
+        <li>それ以降は，前の回で選ばれたプレイヤーの次のプレイヤーを選ぶ．</li>
+      </ul>
+    </li>
+    <li><i>p</i> の次のプレイヤー <i>p′</i> は，<i>p</i> の手札を見て，その中で最小の番号のカードを引く．</li>
+    <li><i>p′</i> が同じ番号のカードを 2 枚持つようになった場合には，その 2 枚のカードを場に捨てる．この結果，すべてのプレイヤーのカードがなくなったら，ゲームは終了する．</li>
+  </ul>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    図 B-1 は，Sample Input で 2 番目のデータセットにおける 3 人のプレイヤーの初期手札を示している．この直後に，<i>P</i><sub>1</sub> は手札の 2 枚のカードを捨てる．1 回目の <i>p</i> は <i>P</i><sub>2</sub> である．なぜならば，<i>P</i><sub>1</sub> の手札は空になっているからだ．
+</p>
+  <!-- end ja only -->
+
+  <div style="text-align:center;" class="figure">
+    <img src="All%20Problems_files/B-1.png" width="400">
+  </div>
+
+  <!-- begin ja only -->
+  <div style="text-align:center;" class="figure">
+    図 B-1: Sample Input の 2 番目のデータセットの初期手札
+  </div>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    図 B-2 は，Sample Input の最後のデータセットで，以下の動作が終わった後の 5 人のプレイヤーの手札を示している．
+  </p>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <ul>
+    <li><i>P</i><sub>1</sub> がまず選ばれ，<i>P</i><sub>1</sub> の次のプレイヤー（すなわち <i>P</i><sub>2</sub>）が <i>P</i><sub>1</sub> の手札の中から最小の番号 1 のカードを引く．この回の終わりに，<i>P</i><sub>2</sub> は 1, 3, 5 の番号の 3 枚のカードを持つ．</li>
+    <li><i>P</i><sub>3</sub>, <i>P</i><sub>4</sub>, <i>P</i><sub>5</sub> がこの順番に同じカード（最初は <i>P</i><sub>1</sub> の手札にあった番号 1 のカード）を引く．</li>
+    <li><i>P</i><sub>5</sub> が，同じ番号 1 のカード 2 枚を捨てる．</li>
+  </ul>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    この後，<i>P</i><sub>1</sub> が <i>P</i><sub>5</sub> の手札から唯一残ったカードを引き，このカードと自分の手札の中の同じ番号 2 のカードを捨てる．次に手札を引かれるのは，<i>P</i><sub>5</sub> の次のプレイヤーであり，<i>P</i><sub>1</sub> の手札は空になっているので，それは <i>P</i><sub>2</sub> である．
+  </p>
+  <!-- end ja only -->
+
+  <div style="text-align:center;" class="figure">
+    <img src="All%20Problems_files/B-2.png" width="400">
+  </div>
+
+  <!-- begin ja only -->
+  <div style="text-align:center;" class="figure">
+    図 B-2: Sample Input の最後のデータセットで，4 回目の動作の後の手札
+  </div>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    同じプレイヤーが 2 回手札を引かれる間に，少なくとも 1 対のカードが捨てられるので，遅かれ早かれゲームは終わる．
+    ババ抜きとは異なり，最後にカードは残らない．
+  </p>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    全プレイヤーの最初の手札が与えられた時，ゲームが終了するまでに何回カードが引かれるかを求めるプログラムを作成せよ．
+  </p>
+  <!-- end ja only -->
+
+</div>
+
+<h3>Input</h3>
+
+<div>
+
+  <!-- begin ja only -->
+  <p>
+    入力は複数のデータセットからなり，各データセットは次の形式で表される．
+  </p>
+  <!-- end ja only -->
+
+  <blockquote>
+    <i>n</i> <br>
+    <i>c</i><sub>1,1</sub> <i>c</i><sub>1,2</sub> <br>
+    ⋮ <br>
+    <i>c</i><sub><i>n</i>,1</sub> <i>c</i><sub><i>n</i>,2</sub> <br>
+  </blockquote>
+
+  <!-- begin ja only -->
+  <p>
+    <i>n</i> はプレイヤーの人数を表す．
+    <i>n</i> は，2 以上 1000 以下の整数である．
+    <i>c</i><sub><i>i</i>,1</sub> と <i>c</i><sub><i>i</i>,2</sub> は <i>P<sub>i</sub></i> の最初の手札の 2 枚のカードの番号である (1 ≤ <i>i</i> ≤ <i>n</i>)．1 から <i>n</i> までの各整数が，<i>c</i><sub>1,1</sub>, <i>c</i><sub>1,2</sub>, ..., <i>c</i><sub><i>n</i>,1</sub>, <i>c</i><sub><i>n</i>,2</sub> の中にちょうど 2 回ずつ現れる．
+  </p>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    入力の終わりは，ゼロだけからなる行で表される．入力のサイズは 10000 行以下である．
+  </p>
+  <!-- end ja only -->
+
+</div>
+
+<h3>Output</h3>
+
+<div>
+
+  <!-- begin ja only -->
+  <p>
+    各データセットについて，カードが引かれる回数を表す 1 つの整数からなる行を出力せよ．
+  </p>
+  <!-- end ja only -->
+
+</div>
+
+<h3>Sample Input</h3>
+
+<div>
+  <pre>3
+1 1
+2 2
+3 3
+3
+1 1
+2 3
+3 2
+3
+1 3
+2 1
+3 2
+5
+1 5
+5 4
+4 3
+3 2
+2 1
+5
+1 2
+3 5
+4 3
+1 4
+5 2
+5
+1 2
+3 5
+4 3
+5 4
+1 2
+0
+</pre>
+</div>
+
+<h3>Output for the Sample Input</h3>
+
+<div>
+  <pre>0
+2
+3
+14
+8
+8
+</pre>
+</div>
+</a><div align="right"><a name="section_B">(End of Problem B) </a><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+<a name="section_C"><h2>Problem C</h2>
+<!-- begin ja only -->
+<h3><u>ICPC に向けての練習日程</u></h3>
+<!-- end ja only -->
+
+<div>
+  <!-- please enclose each h3 level section with div -->
+
+  <!-- begin ja only -->
+  <p>
+    ICPC までに残された時間は少なくなり，あなたたちは練習計画を練り直すことにした．気力体力の温存も大切なので，残る <var>n</var> + <var>m</var> 日のうち <var>n</var> 日を練習に，<var>m</var> 日は休息に充てることにする．問題はどの日を練習日，どの日を休息日とするのがよいかだ．練習計画は <u>ICPC 能力</u> をより高めるものほどよい．
+  </p>
+  <!-- end ja only -->
+  <!-- begin ja only -->
+  <p>
+    練習日は能力を高め，練習日が連続すると効果はさらに大きくなる．連続する練習日の <var>k</var> 日目の練習では能力が前日より 2<var>k</var> − 1 だけ高まる (連続する練習日の初日を <var>k</var> = 1 とする)．1 日だけの練習では能力は 1 しか高まらないが，2 日続ければ 1 + 3 = 4 高まり，3 日続ければ 1 + 3 + 5 = 9 も高まることになる．
+  </p>
+  <p>
+    一方，休息日は能力を落とし，続けて休息日をとると能力がどんどん低下していく．連続する休息日の <var>k</var> 日目には能力が前日より 2<var>k</var> − 1 だけ低下する (連続する休息日の初日を <var>k</var> = 1 とする)．1 日だけの休息なら能力が 1 低下するだけだが，2 日続けると 1 + 3 = 4，3 日続ければ 1 + 3 + 5 = 9 も低下してしまう．
+  </p>
+  <!-- end ja only -->
+  <!-- begin ja only -->
+  <p>
+    最善の練習計画によって <var>n</var> + <var>m</var> 日間の練習と休息の後に達成できる ICPC 能力の最大増分を求めよ．休息日が多いとこの値は負になってしまうこともあることに注意．
+  </p>
+  <!-- end ja only -->
+</div>
+
+<h3>Input</h3>
+
+<div>
+
+  <!-- begin ja only -->
+  <p>
+    入力は複数のデータセットからなる．
+    各データセットは次の形式で表される．
+  </p>
+  <!-- end ja only -->
+
+  <blockquote>
+    <var>n</var> <var>m</var><br>
+  </blockquote>
+
+  <!-- begin ja only -->
+  <p>
+    ここで <var>n</var> と <var>m</var> はそれぞれ練習日と休息日の日数である．
+    どちらも 10<sup>6</sup> を超えることはなく，少なくとも一方はゼロでない．
+  </p>
+  <!-- end ja only -->
+
+  <!-- begin ja only -->
+  <p>
+    入力の終わりはゼロふたつからなる行で表される．
+    データセットは 100 個以内である．
+  </p>
+  <!-- end ja only -->
+</div>
+
+<h3>Output</h3>
+
+<div>
+
+  <!-- begin ja only -->
+  <p>
+    各データセットについて，最善の練習計画によって <var>n</var> + <var>m</var> 日間の練習と休息の後に達成できる ICPC 能力の最大増分を 1 行に出力せよ．
+  </p>
+  <!-- end ja only -->
+
+</div>
+
+<h3>Sample Input</h3>
+
+<div>
+<pre>1 1
+3 2
+6 1
+1 6
+0 3
+2 4
+7 9
+0 0
+</pre>
+</div>
+
+<h3>Output for the Sample Input</h3>
+
+<div>
+<pre>0
+7
+35
+-17
+-9
+-4
+10
+</pre>
+</div>
+</a><div align="right"><a name="section_C">(End of Problem C) </a><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+<a name="section_D"><h2>Problem D</h2>
+<!-- begin ja only -->
+<h3><u>入場待ちの行列</u></h3>
+<!-- end ja only -->
+
+<div>   <!-- please enclose each h3 level section with div -->
+
+<!-- begin ja only -->
+<p>
+あなたはコンサート会場のスタッフとして聴衆の行列の整理にあたっている．
+入場希望者は各自，座席番号の記されたチケットを一枚ずつ所持している．
+
+座席番号は 1 から <i>n</i> までの整数で，重複はない．
+人気のコンサートなので，座席は既に予約で満席になっており，ちょうど <i>n</i> 人が一列に並んでいる．
+</p>
+<!-- end ja only -->
+
+  <div style="border: none; text-align:right; margin-right: 1em; margin-bottom: 0.5em">
+    <img src="All%20Problems_files/D-1.png" alt="The first dataset in Sample Input" width="40%">
+  </div>
+  <!-- begin ja only -->
+  <div style="border: none; text-align:center;">
+    図 D-1: 入場列の例 (Sample Input の最初のデータセット)
+  </div>
+  <!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+あなたに任されている仕事は，この入場列を適当な何カ所かで区切って，それぞれの列を別々の入場ゲートに案内することである．
+聴衆は皆礼儀正しいので区切られた列の中の順序が変わることはない．
+入場ゲートは <i>k</i> カ所あるので，元の列を <i>k</i> 本以内の列に分割できる．
+各列の長さは大きく異なっても良いが，空の列を作ってはならない．
+下図の例では，元の列 [4 2 3 5 1] を 3 本の列 [4 2], [3 5], [1] に分割している．
+</p>
+<!-- end ja only -->
+
+  <div style="border: none; text-align:center;">
+    <img src="All%20Problems_files/D-2.png" alt="The first dataset in Sample Input" width="36%">
+  </div>
+  <!-- begin ja only -->
+  <div style="border: none; text-align:center;">
+    図 D-2: 列の分割の例
+  </div>
+  <!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+最大 <i>k</i> 本の列はできるが，聴衆は一人ずつしか会場に入っていけない．
+この際，各列の先頭のなかで，最も小さい座席番号の人が最初に入場する．
+以下の図の例では先頭の 4, 3, 1 のうち最小の座席番号 1 番のチケットを持った人が最初に入場できる．
+その後の入場順も同様で，各列の先頭のなかで最も小さい座席番号の人が次の入場者となる．
+</p>
+<!-- end ja only -->
+
+  <div style="border: none; text-align:left; margin-left: 1em">
+    <img src="All%20Problems_files/D-3.png" alt="The first dataset in Sample Input" width="45%">
+  </div>
+  <!-- begin ja only -->
+  <div style="border: none; text-align:center;">
+    図 D-3: 入場の順の例
+  </div>
+  <!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+聴衆の列をどこで分割するかを決めると入場順が決まる．
+異なる分割で同じ入場順になるかもしれない．
+上の例では，[4 2], [3], [5], [1] と分割しても同じ入場順になる．
+</p>
+<p>
+聴衆の最初の並び順と，実現したい最終的な入場順が与えられたとき，その入場順になるような列の分割の仕方が何通りあるか，計算してほしい．
+分割の仕方が同じなら，どの列をどのゲートに案内するかは区別しない．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Input</h3>
+
+<div>
+
+<!-- begin ja only -->
+<p>
+入力は複数のデータセットからなる．
+各データセットは次の形式で表される．
+</p>
+<!-- end ja only -->
+
+<blockquote>
+<i>n</i> <i>k</i><br>
+<i>s</i><sub>1</sub> ... <i>s<sub>n</sub></i> <br>
+<i>t</i><sub>1</sub> ... <i>t<sub>n</sub></i> <br>
+</blockquote>
+
+<!-- begin ja only -->
+<p>
+整数 <i>n</i>, <i>k</i> は
+1 ≤ <i>k</i> ≤ <i>n</i> ≤ 10<sup>4</sup> を満たし，
+<i>n</i> が列に並ぶ聴衆の人数を，<i>k</i> がゲートの数を表す．
+<i>s</i><sub>1</sub> ... <i>s<sub>n</sub></i> は 1 から <i>n</i> までの整数を並べかえた列であり，聴衆の最初の並び順を表す．
+<i>t</i><sub>1</sub> ... <i>t<sub>n</sub></i> も同様に 1 から <i>n</i> までの整数を並べかえた列であり，実現したい最終的な入場順を表す．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+入力の終わりは，"<t>0 0</t>" という行で表される．
+データセットの数は 50 を超えない．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Output</h3>
+
+<div>
+
+<!-- begin ja only -->
+<p>
+各データセットについて，題意を満たす分割の仕方が何通りあるかを 1 行に出力せよ．
+答えはとても大きくなり得るため，出力するのは素数 <nobr>998 244 353</nobr> で割った余りとすること．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Sample Input</h3>
+
+<div>
+<pre>5 4
+4 2 3 5 1
+1 3 4 2 5
+3 3
+1 2 3
+1 2 3
+3 2
+3 2 1
+1 2 3
+7 5
+4 5 6 7 1 2 3
+1 2 3 4 5 6 7
+4 4
+2 1 4 3
+1 4 3 2
+31 31
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+0 0
+</pre>
+</div>
+
+<h3>Output for the Sample Input</h3>
+
+<div>
+<pre>2
+4
+0
+26
+0
+75497471
+</pre>
+</div>
+</a><div align="right"><a name="section_D">(End of Problem D) </a><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+<a name="section_E"><h2>Problem E</h2>
+<!-- begin ja only -->
+<h3><u>伝承の村</u></h3>
+<!-- end ja only -->
+
+<div>   <!-- please enclose each h3 level section with div -->
+
+<!-- begin ja only -->
+<p>
+密林の奥深くに位置するという Icpca 村は，相反する奇妙な伝承で有名である．
+一説には，そこは具現化された幸福であるという．一説には，そこは身の毛もよだつ恐怖の要塞であるという．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+数少ない情報源である老占者によれば，Icpca 村は長方形で，道路は格子状に整備されており，東西方向に <i>n</i> 本，南北方向に <i>m</i> 本の道路がそれぞれまっすぐに村を貫いているらしい．
+なお，<i>n</i> と <i>m</i> はともに偶数である．
+伝承の真相を探るため，<i>n</i> + <i>m</i> 人からなる調査チームが Icpca 村に派遣された．調査計画は以下の通りであった．
+</p>
+<ul>
+  <li>
+    最初の <i>n</i> 人の調査員のうち <i>i</i> 人目は，東西方向の道路のうちの北から <i>i</i> 本目を，西端から東端に向かって歩く．</li>
+  <li>残る <i>m</i> 人の調査員のうち <i>j</i> 人目は，南北方向の道路のうちの西から <i>j</i> 本目を，北端から南端に向かって歩く．</li>
+</ul>
+<!-- end ja only -->
+<!-- begin ja only -->
+<p>
+調査員のうち何人かは，予定通りに Icpca 村から帰還した．しかしながら残りの調査員は，いまだに音信不通のままだ……
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+老占者の幻視によれば，Icpca 村の東西方向と南北方向の道路の交わる <i>nm</i> 個の交差点には，それぞれ石像がちょうど 1 体立っているという．
+石像には美しい像と恐ろしい像の二種類があり，すべての像はそのどちらかである．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+各調査員は正気度と呼ばれる値を持っており，Icpca 村に入る時点では，すべての調査員の正気度は 0 であった．
+調査員の正気度は，美しい像のある交差点にさしかかると 1 増加する．また，恐ろしい像のある交差点にさしかかると 1 減少する．
+恐ろしい像はとても恐ろしいので，途中で正気度が負になった場合，調査員はその場で動けなくなって，村に取り残されてしまう．
+美しい像はとても美しいので，もし Icpca 村を出る時点で正気度が正なら，調査員は村から出るのを嫌がり，やはり村に取り残されてしまう．
+どちらにも当てはまらない調査員，すなわち，途中で正気度が負にならず，村を出る時点で正気度が 0 であった調査員だけが，無事に村から帰還できる．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+多くの遭難者を出しながらも調査は完了した．あなたは帰還した調査員のリストを持っている．
+あなたの仕事はリストと矛盾しない美しい像と恐ろしい像の配置がありうるかを判定し，あるならそのひとつを求めることである．
+</p>
+<!-- end ja only -->
+
+
+
+</div>
+
+<h3>Input</h3>
+
+<div>
+
+<!-- begin ja only -->
+<p>
+入力は複数のデータセットからなる．
+各データセットは次の形式で表される．
+</p>
+<!-- end ja only -->
+
+<blockquote>
+<i>n</i> <i>m</i><br>
+<i>A</i> <br>
+<i>B</i> <br>
+</blockquote>
+
+<!-- begin ja only -->
+<p>
+<i>n, m</i> はそれぞれ，東西方向と南北方向の道路の本数を表す．
+<i>n, m</i> は，正の偶数であり，100 を超えない．
+<i>A, B</i> は それぞれ，各調査員が村を通過できたかを表す文字列である．
+<i>A</i> は長さ <i>n</i> の，<i>B</i> は長さ <i>m</i> の，それぞれ <t>0</t> と <t>1</t> のみからなる文字列である．
+<i>A</i> の <i>i</i> 文字目は，最初の <i>n</i> 人の調査員のうちの <i>i</i> 人目が村から帰還したかどうかの情報を表す．具体的には，<t>0</t> のときは帰還していないことを，<t>1</t> のときは帰還したことを表す．
+同様に，<i>B</i> の <i>j</i> 文字目は，残る <i>m</i> 人の調査員のうちの <i>j</i> 人目が村から帰還したかどうかの情報を表す．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+データセットの個数は 100 を超えない．
+入力の終わりは，ゼロふたつからなる行で表される．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Output</h3>
+
+<div>
+
+<!-- begin ja only -->
+<p>
+  各データセットについて，リストと矛盾しない像の配置が存在しなければ 1 行に <t>No</t> を出力せよ．
+  存在すれば，1 行に <t>Yes</t> を出力し，続けて矛盾しない配置のひとつを <i>n</i> 行に出力せよ．
+  <i>n</i> 行のそれぞれは `<t>+</t>' と `<t>−</t>' からなる長さ <i>m</i> の文字列である．
+  <i>i</i> 番目の文字列の <i>j</i> 文字目の `<t>+</t>' は，北から <i>i</i> 本目の道路と西から <i>j</i> 番目の道路の交差点に美しい像があることを表し，`<t>−</t>' は恐ろしい像があることを表す．
+</p>
+<p>
+リストと矛盾しない像の配置は複数あるかもしれないが，そのいずれを出力しても正答と判定される．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Sample Input</h3>
+
+<div>
+<pre>2 2
+10
+10
+2 2
+11
+11
+4 6
+0010
+100011
+0 0
+</pre>
+</div>
+
+<h3>Output for the Sample Input</h3>
+
+<div>
+<pre>Yes
++-
+-+
+No
+Yes
++---++
+----++
++++---
+---+--
+</pre>
+</div>
+</a><div align="right"><a name="section_E">(End of Problem E) </a><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+<a name="section_F"><h2>Problem F</h2>
+<!-- begin ja only -->
+<h3><u>じわじわ削れ</u></h3>
+<!-- end ja only -->
+
+<div>   <!-- please enclose each h3 level section with div -->
+
+<!-- begin ja only -->
+<p>
+王国の諜報機関は独特の暗号化方式を使っており，英小文字のみからなる空でない文字列である通信文を，以下の BNF で記述される文法に従う式 &lt;expr&gt; に暗号化する．
+</p>
+<!-- end ja only -->
+
+<blockquote>
+<table>
+<tbody><tr valign="top">
+  <td>&lt;expr&gt;</td>
+  <td>::=</td>
+  <td>&lt;char&gt; | &lt;expr&gt;&lt;expr&gt; | <big><code>?(</code></big>&lt;expr&gt;<big><code>)</code></big></td>
+</tr>
+<tr valign="top">
+  <td>&lt;char&gt;</td>
+  <td>::=</td>
+  <td><big><code>a</code></big> | <big><code>b</code></big> | <big><code>c</code></big> | <big><code>d</code></big> | <big><code>e</code></big> | <big><code>f</code></big> | <big><code>g</code></big> | <big><code>h</code></big> | <big><code>i</code></big> | <big><code>j</code></big> | <big><code>k</code></big> | <big><code>l</code></big> | <big><code>m</code></big> | <big><code>n</code></big> | <big><code>o</code></big> | <big><code>p</code></big> | <big><code>q</code></big> | <big><code>r</code></big> | <big><code>s</code></big> | <big><code>t</code></big> | <big><code>u</code></big> | <big><code>v</code></big> | <big><code>w</code></big> | <big><code>x</code></big> | <big><code>y</code></big> | <big><code>z</code></big></td>
+</tr>
+</tbody></table>
+</blockquote>
+
+<!-- begin ja only -->
+<p>
+暗号化前の通信文は，以下に述べる手順を暗号文に適用した結果としてあり得る文字列のうち，辞書式順序で最初に現れるものである．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+<b>手順:</b> 式中に <big><code>?</code></big> が残っている限り，以下の操作を繰り返す．
+</p>
+<ol>
+<li><big><code>?(</code></big><i>s</i><big><code>)</code></big> という形の連続部分文字列であって，<i>s</i> に記号 <big><code>?</code></big>, <big><code>(</code></big>, <big><code>)</code></big> を含まないようなものの出現（式全体でもよい）を任意に 1 つ選ぶ．
+<!--- ただし，部分文字列は式中の位置によって特定され，文字列として同一であっても異なる位置に出現するものは区別されるものとする． --></li>
+<li><i>s</i> が空文字列であれば，選んだ <big><code>?()</code></big> の出現を単に取り除く．</li>
+<li>そうでなければ，選んだ <big><code>?(</code></big><i>s</i><big><code>)</code></big> の出現を，<i>s</i> の先頭または末尾 1 文字を取り除いた文字列で置き換える．</li>
+</ol>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+たとえば <big><code>?(?(icp)c)</code></big> という式を考えてみよう．このとき，選べる出現は <big><code>?(icp)</code></big> のみであり，この部分が <big><code>cp</code></big> または <big><code>ic</code></big> に置き換えられる．したがって，式全体は <big><code>?(cpc)</code></big> または <big><code>?(icc)</code></big> となる．さらに，それぞれの式全体を選んで置き換えると，結果としてあり得る文字列は <big><code>pc</code></big>, <big><code>cp</code></big>, <big><code>cc</code></big>, <big><code>ic</code></big> の 4 種類である．このうち，辞書式順序で最初に現れる <big><code>cc</code></big> が暗号化前の通信文である．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+敵対する共和国の諜報員であるあなたは，暗号文，すなわち上述の式を入手することに成功した．暗号化前の通信文を求めよ．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Input</h3>
+
+<div>
+<!-- begin ja only -->
+<p>
+入力は複数のデータセットからなる．入力の 1 行目はデータセットの個数 <i>n</i> のみからなり，<i>n</i> は 50 を超えない．続く <i>n</i> 行に，1 行に 1 つずつデータセットが与えられる．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+データセットは問題文中の BNF で記述される文法に従う式 &lt;expr&gt; の 1 行のみからなり，式の文字数は記号を含めて 1000 を超えない．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Output</h3>
+
+<div>
+<!-- begin ja only -->
+<p>
+各データセットについて，問題文中の手順を適用した結果としてあり得る文字列のうち，辞書式順序で最初に現れるものを 1 行に出力せよ．正しい出力は空文字列にならないことが保証される．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Sample Input</h3>
+
+<div>
+<pre>6
+?(icpc)
+?(?(icpc))
+?(ic)?(pc)
+?(?(icp)c)
+?(i?(?(c))pc)
+?(bca)?(?(bca))
+</pre>
+</div>
+
+<h3>Output for the Sample Input</h3>
+
+<div>
+<pre>cpc
+cp
+cc
+cc
+ip
+bca
+</pre>
+</div>
+</a><div align="right"><a name="section_F">(End of Problem F) </a><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+<a name="section_G"><h2>Problem G</h2>
+<!-- begin ja only -->
+<h3><u>連絡を絶やすな</u></h3>
+<!-- end ja only -->
+
+</a><div><a name="section_G">   <!-- please enclose each h3 level section with div -->
+
+<!-- begin ja only -->
+<p>
+名コンビであるふたりのエージェント A, B がアジトへの潜入ミッションを行う．アジトの警備は厳重であるため，エージェント A, B は，それぞれ確認済みの安全な潜入経路 <i>R</i><sub>A</sub>, <i>R</i><sub>B</sub> をたどり移動することとした．潜入経路は二次元平面上の折れ線（線分の並び）である．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+各エージェントはそれぞれの潜入経路の最初の線分の開始端から潜入する．同時にふたりとも最後の線分の終端にいればミッション完了である．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+  
+ミッション中エージェントは経路上を連続的に移動するなら，自由な速度で前進も後退もでき，一時停止することもできる．しかし，ジャンプして不連続に移動
+することはできない．潜入経路の線分は同じ経路上の他の線分と交差したり重なったりしているかもしれないが，それを移動には利用できない．厳密には，ある
+線分上にいるエージェントが他の線分に移れるのは，次の場合だけである．
+</p>
+<ul>
+  <li>移動先が経路上で直後の線分で，エージェントが現在の線分の終端にいる場合．</li>
+  <li>移動先が経路上で直前の線分で，エージェントが現在の線分の開始端にいる場合．</li>
+</ul>
+<p>
+  例えば，下の図 G-1 において，潜入経路 <i>R</i><sub>B</sub> の線分 3-4 から線分 4-5 に移るには，線分 
+3-4 の終端である (−1, 1) に移動しなければならない．また，線分 2-3 から線分 3-4 に移るときに，最後の線分の終端と同じ座標 
+(2, 1) を通過するが，このときは最後の線分の終端にいることにはならない．
+</p>
+<!-- end ja only -->
+
+<div style="text-align:center" class="figure">
+  <img src="All%20Problems_files/G-1.png">
+</div>
+  <!-- begin ja only -->
+<div style="text-align:center" class="figure">
+  図 G-1: Sample Input の 1 番目のデータセットの潜入経路
+</div>
+  <!-- end ja only -->
+
+<div style="text-align:center" class="figure">
+  <img src="All%20Problems_files/G-2.png">
+</div>
+  <!-- begin ja only -->
+<div style="text-align:center" class="figure">
+  図 G-2: Sample Input の 2 番目のデータセットの潜入経路
+</div>
+  <!-- end ja only -->
+  
+<!-- begin ja only -->
+<p>
+不測の事態に備えてふたりのエージェントは無線通信機を携帯し，常にふたりの間の連絡がとれる範囲内にいなくてはならない．電波強度を上げれば通信可能な
+距離は長くなるが，傍受の危険性も高まる．両エージェントが適切に移動するとして，任務完了に必要な通信可能距離の最小値を求めよ．
+</p>
+<!-- end ja only -->
+
+<h3>Input</h3>
+
+<div>
+
+<!-- begin ja only -->
+<p>
+入力は複数のデータセットからなる．各データセットは次の形式で表される．
+</p>
+<!-- end ja only -->
+
+<blockquote>
+<i>n</i><br>
+<i>x</i><sub>A,1</sub> <i>y</i><sub>A,1</sub> <br>
+ ⋮<br>
+<i>x</i><sub>A,<i>n</i></sub> <i>y</i><sub>A,<i>n</i></sub> <br>
+<i>m</i><br>
+<i>x</i><sub>B,1</sub> <i>y</i><sub>B,1</sub> <br>
+ ⋮<br>
+<i>x</i><sub>B,<i>m</i></sub> <i>y</i><sub>B,<i>m</i></sub> <br>
+</blockquote>
+
+<!-- begin ja only -->
+<p>
+<i>n</i> は潜入経路 <i>R</i><sub>A</sub> を構成する折れ線の頂点数を表す．<i>n</i> は 2 以上 40 以下の整数である．
+</p>
+
+<p>
+  <i>x</i><sub>A,<i>i</i></sub> と <i>y</i><sub>A,<i>i</i></sub> (1 ≤ <i>i</i> ≤ <i>n</i>) は <i>i</i> 番目の頂点の座標を表す．<i>x</i><sub>A,<i>i</i></sub> と <i>y</i><sub>A,<i>i</i></sub> はそれぞれ −1000 ≤ <i>x</i><sub>A,<i>i</i></sub> ≤ 1000, −1000 ≤ <i>y</i><sub>A,<i>i</i></sub> ≤ 1000 を満たす整数である．1 ≤ <i>i</i> ≤ <i>n</i>−1 を満たす <i>i</i> について (<i>x</i><sub>A,<i>i</i></sub>, <i>y</i><sub>A,<i>i</i></sub>) が <i>i</i> 番目の線分の開始端，(<i>x</i><sub>A,<i>i</i>+1</sub>, <i>y</i><sub>A,<i>i</i>+1</sub>) が終端である．どの線分の長さも 0 ではない．すなわち，<i>x</i><sub>A,<i>i</i></sub> ≠ <i>x</i><sub>A,<i>i</i>+1</sub> と <i>y</i><sub>A,<i>i</i></sub> ≠ <i>y</i><sub>A,<i>i</i>+1</sub> の少なくとも一方は成り立つ．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+<i>m</i> および <i>x</i><sub>B,<i>j</i></sub>, <i>y</i><sub>B,<i>j</i></sub>  (1 ≤ <i>j</i> ≤ <i>m</i>) は潜入経路 <i>R</i><sub>B</sub> の情報を表す．形式および制約は <i>R</i><sub>A</sub> についてのものと同じである．
+</p>
+<!-- end ja only -->
+
+<!-- begin ja only -->
+<p>
+入力の終わりは，ゼロだけからなる行で表される．データセットの個数は 50 を超えない．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Output</h3>
+
+<div>
+
+<!-- begin ja only -->
+<p>
+各データセットについて，任務中のエージェント間の距離の最大値が最小になるようにふたりが移動するとき，ふたりの間の距離の最大値を 1 行に出力せよ．出力は相対誤差または絶対誤差が 10<sup>−8</sup> 以下であれば許容される．
+</p>
+<!-- end ja only -->
+
+</div>
+
+<h3>Sample Input</h3>
+
+<div>
+<pre>2
+0 0
+2 0
+5
+0 -1
+2 -1
+2 1
+-1 1
+2 1
+4
+0 0
+4 6
+0 3
+8 6
+3
+0 0
+4 3
+8 6
+10
+40 15
+40 20
+40 15
+45 10
+50 12
+50 10
+50 15
+60 15
+65 20
+70 18
+10
+40 10
+40 15
+45 20
+50 18
+50 15
+50 20
+60 20
+60 15
+65 10
+70 12
+0
+</pre>
+</div>
+
+<h3>Output for the Sample Input</h3>
+
+<div>
+<pre>1.414213562373
+2.400000000000
+9.284766908853
+</pre>
+</div>
+</a><div align="right"><a name="section_G">(End of Problem G) </a><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+<a name="section_H"><h2>Problem H</h2>
+<!-- begin ja only -->
+<h3><u>芸術家の苦悩</u></h3>
+<!-- end ja only -->
+
+<div>
+    <!-- please enclose each h3 level section with div -->
+
+    <!-- begin ja only -->
+    <p>
+        芸術家であるあなたは，作品の材料として多くのボールとそれらを結ぶための紐を用意した．ボールには順に番号を振っていくが，最初はボールのひとつを 1 番とするだけである．他のボールはまだ番号を振っていないし，どのボールも紐で結んでいない．
+    </p>
+    <!-- end ja only -->
+
+    <!-- begin ja only -->
+    <p>
+        作品制作には以下の操作のどちらかを行うことを繰り返す．
+    </p>
+    <dl>
+        <dt><b>複製</b>:</dt>
+        <dd>制作途中の作品のレプリカを作る．これまでに番号付けしたボールが <i>n</i> 個あるとき，まだ番号のついていないボール <i>n</i> 個に <i>n</i>+1, ..., 2<i>n</i> という番号を振る．これで 2<i>n</i> 個のボールに 1 から 2<i>n</i> の重複しない番号を振ったことになる．次に，複製前に直接結ばれていたふたつのボールの組すべてについて，それが <i>u</i> 番と <i>v</i> 番なら，新たに <i>n</i>+<i>u</i> 番と <i>n</i>+<i>v</i> 番のふたつのボールを紐で結ぶ．</dd>
+        <dt><b>新たな結合</b>:</dt>
+        <dd>番号がついているふたつの異なるボールを選び，紐で結ぶ．ただし，ふたつのボールが既に直接結ばれていたら何もしない．</dd>
+    </dl>
+    <p>
+        最初はひとつのボールにしか番号がついていないので，まずは複製から始めることになる．
+    </p>
+    <!-- end ja only -->
+
+    <!-- begin ja only -->
+    <p>
+        図 H-1 に Sample Input の 2 番目のデータセットの作品の制作過程を示す．
+    </p>
+    <!-- end ja only -->
+
+    <div style="text-align:center;" class="figure">
+        <img src="All%20Problems_files/H-actions.svg" alt="Visualization of the second dataset in Sample Input." width="400">
+    </div>
+    <!-- begin ja only -->
+    <div style="text-align:center;" class="figure">
+        図 H-1: 作品の制作例
+    </div>
+    <!-- end ja only -->
+
+
+    <!-- begin ja only -->
+    <p>
+        
+すべての真の芸術家と同様完璧主義者であるあなたは，不完全な作品には我慢できない．不満足な作品は，つないだ紐を全部引きちぎって一刻も早く完全に破壊
+してしまいたい．そこで，あなたは番号のついたボールのうちのいくつかを片手に，残り全てをもう一方の手に持って，ふたつの端点が左右の手にまたがるよう
+な紐を全部いっぺんに引きちぎることにした．この行為を 1 
+回だけ行うことでボールとボールを結ぶ紐を全て切断できれば，作品の破壊は成功である．逆に，同じ手に持ったボール同士を結ぶ紐があるようならば，それが
+切断されずに残ってしまうので，作品の破壊は失敗である．
+    </p>
+    <!-- end ja only -->
+
+    <!-- begin ja only -->
+    <p>
+        図 H-2 は Sample Input の 2 番目のデータセットで作られる作品の破壊を試みる様子を示している．この作品を破壊するには，どちらの手にも 3 個以上のボールを持つ必要がある．
+    </p>
+    <!-- end ja only -->
+
+    <div style="text-align:center;" class="figure">
+        <img src="All%20Problems_files/H-artist.svg" alt="The artist in agony, trying to destroy the artwork of the second dataset in Sample Input." width="300">
+    </div>
+    <!-- begin ja only -->
+    <div style="text-align:center;" class="figure">
+        図 H-2: 上述の作品の破壊
+    </div>
+    <!-- end ja only -->
+
+    <!-- begin ja only -->
+    <p>
+        与えられた操作の列によって作られる作品について，上記のやり方でこれを破壊できるか判定せよ．できる場合は，少なくともいくつのボールを左手に持つ必要があるか求めよ．右手にはいくつのボールを持ってもよい．
+    </p>
+    <!-- end ja only -->
+</div>
+
+<h3>Input</h3>
+
+<div>
+
+    <!-- begin ja only -->
+    <p>
+        入力は複数のデータセットからなる．
+        各データセットは次の形式で表される．
+    </p>
+    <!-- end ja only -->
+
+    <blockquote>
+        <i>m</i> <br>
+        <i>a</i><sub>1</sub><br>
+         ⋮<br>
+        <i>a<sub>m</sub></i><br>
+    </blockquote>
+
+    <!-- begin ja only -->
+    <p>
+        <i>m</i> はあなたが行った操作の数を表す．<i>m</i> は正の整数であり，300 を超えない．
+    </p>
+    <!-- end ja only -->
+
+
+    <!-- begin ja only -->
+    <p>
+        <i>i</i> 番目の操作 <i>a<sub>i</sub></i> (<i>i</i> = 1, ..., <i>m</i>) は以下のいずれかの形式で与えられる．
+    </p>
+    <dl>
+        <dt><code>COPY</code></dt>
+        <dd>
+            これは問題文中の <b>複製</b> 操作を表す．単一のデータセットに含まれる <code>COPY</code> 操作の総数は 60 を超えないことが保証される．
+        </dd>
+        <dt><code>LINK</code> <i>u</i> <i>v</i></dt>
+        <dd>
+            これは問題文中の <b>新たな結合</b> 操作を表す．この操作では，番号 <i>u, v</i> の 2 個のボールを確認し，これらがまだ直接結ばれていなければ紐で結んだ．<i>u</i> と <i>v</i> は <i>u &lt; v</i> を満たす正の整数で，この操作の時点で番号 <i>u, v</i> のボールがそれぞれ存在することが保証される．
+        </dd>
+    </dl>
+    <!-- end ja only -->
+
+    <!-- begin ja only -->
+    <p>
+        入力の終わりは，ゼロだけからなる行で表される．入力に含まれるデータセットは 100 個以下である．
+    </p>
+    <!-- end ja only -->
+
+</div>
+
+<h3>Output</h3>
+
+<div>
+
+    <!-- begin ja only -->
+    <p>
+        各データセットについて，ひとつの整数からなる行を出力する．上述の方法で作品を破壊することができるならば，そのとき左手に持つ必要があるボールの最小の個数を出力せよ．作品の破壊が不可能ならば −1 を出力せよ．
+    </p>
+    <!-- end ja only -->
+
+</div>
+
+<h3>Sample Input</h3>
+
+<div>
+    <pre>3
+COPY
+LINK 1 2
+COPY
+8
+COPY
+COPY
+LINK 1 2
+LINK 1 3
+LINK 1 3
+COPY
+LINK 5 6
+LINK 3 6
+5
+COPY
+LINK 1 2
+COPY
+LINK 1 3
+LINK 2 3
+2
+COPY
+COPY
+0
+</pre>
+</div>
+
+<h3>Output for the Sample Input</h3>
+
+<div>
+    <pre>2
+3
+-1
+0
+</pre>
+</div>
+</a><div align="right"><a name="section_H">(End of Problem H) </a><a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_A">A</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_B">B</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_C">C</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_D">D</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_E">E</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_F">F</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_G">G</a>
+<a href="https://icpc.iisf.or.jp/past-icpc/domestic2022/contest/all_ja.html#section_H">H</a>
+</div>
+ </div></td>                     
+</tr>                      
+</tbody></table>                   
+
+
+
+
+
+
+
+</body></html>
